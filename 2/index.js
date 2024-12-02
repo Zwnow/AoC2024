@@ -4,7 +4,6 @@ const text = await readFile("./input.txt");
 const reports = text.split('\n');
 
 /* PART 2 
-Very inefficient but it's early in the morning.
 What I should do: Check only for error indexes instead of splicing every index.
 */
 const isReportSafe = (levels) => {
@@ -12,7 +11,6 @@ const isReportSafe = (levels) => {
 
     let hasError = false;
     for (let i = 0; i < levels.length - 1; i++) {
-        // Not at least one difference
         if (levels[i] === levels[i+1]) {
             hasError = true;
         }
@@ -50,7 +48,6 @@ const isReportSafeWithDampen = (levels) => {
     const descending = levels[0] > levels[1];
 
     for (let i = 0; i < levels.length - 1; i++) {
-        // Not at least one difference
         if (levels[i] === levels[i+1]) {
             return false;
         }
